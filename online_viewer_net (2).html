@@ -1,0 +1,1571 @@
+Put your HTML <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dois Sóis - Doceria Nordestina | Bombons Artesanais da Bahia e Pernambuco</title>
+    <meta name="description" content="Dois Sóis - onde o sabor do Nordeste brilha duas vezes. Bombons artesanais inspirados na cultura da Bahia e Pernambuco.">
+    <meta name="keywords" content="bombons nordestinos, doceria artesanal, Bahia e Pernambuco, bombons com pimenta, maracujá, limão, culinária do Nordeste">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --amarelo: #FFC145;
+            --laranja: #FF8C42;
+            --marrom: #A65C32;
+            --bege: #F7E7CE;
+            --dourado: #D4AF37;
+            --marrom-escuro: #8B4513;
+            --branco: #FFFDF9;
+            --cinza: #5C5C5C;
+            --azul-escuro: #1E3A5F;
+            --vermelho-escuro: #8B0000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--branco);
+            color: var(--marrom-escuro);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+        }
+
+        /* Títulos alternando entre azul e vermelho escuros */
+        h1, h3, .section-title:nth-child(odd) h2 {
+            color: var(--azul-escuro);
+        }
+
+        h2, h4, .section-title:nth-child(even) h2 {
+            color: var(--vermelho-escuro);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header e Navegação */
+        header {
+            background-color: var(--branco);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-scrolled {
+            padding: 10px 0;
+            background-color: rgba(255, 253, 249, 0.95);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--dourado);
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--marrom);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--marrom);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--laranja);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--laranja);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--marrom);
+            transition: all 0.3s ease;
+        }
+
+        /* Seção Hero */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(166, 92, 50, 0.7), rgba(255, 193, 69, 0.5)), url('');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--branco);
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--branco);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--laranja);
+            color: var(--branco);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--marrom);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: var(--amarelo);
+            margin: 10px auto;
+        }
+
+        /* Sobre Nós */
+        .sobre-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .sobre-texto {
+            flex: 1;
+        }
+
+        .sobre-texto h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .sobre-texto p {
+            margin-bottom: 20px;
+        }
+
+        .sobre-imagem {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .sobre-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .sobre-imagem:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Cardápio */
+        .cardapio {
+            background-color: var(--bege);
+        }
+
+        .cardapio-filtros {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filtro-btn {
+            padding: 8px 20px;
+            background-color: transparent;
+            border: 2px solid var(--marrom);
+            color: var(--marrom);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .filtro-btn.active, .filtro-btn:hover {
+            background-color: var(--marrom);
+            color: var(--branco);
+        }
+
+        .cardapio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .cardapio-item {
+            background-color: var(--branco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cardapio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .cardapio-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .cardapio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .cardapio-item:hover .cardapio-img img {
+            transform: scale(1.1);
+        }
+
+        .cardapio-info {
+            padding: 20px;
+        }
+
+        .cardapio-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .cardapio-desc {
+            color: var(--cinza);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .cardapio-frase {
+            font-style: italic;
+            color: var(--laranja);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .cardapio-preco {
+            font-weight: 700;
+            color: var(--marrom);
+            font-size: 1.2rem;
+        }
+
+        /* Inspiração Nordestina */
+        .inspiracao-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--bege);
+        }
+
+        .tab-btn {
+            padding: 10px 30px;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--cinza);
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .tab-btn.active {
+            color: var(--marrom);
+        }
+
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--amarelo);
+            transition: width 0.3s ease;
+        }
+
+        .tab-btn.active::after {
+            width: 100%;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .estado-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .estado-texto {
+            flex: 1;
+        }
+
+        .estado-texto h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--laranja);
+        }
+
+        .estado-imagem {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .estado-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Equipe */
+        .equipe {
+            background-color: var(--bege);
+        }
+
+        .equipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .equipe-membro {
+            text-align: center;
+            background-color: var(--branco);
+            border-radius: 10px;
+            padding: 30px 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .equipe-membro:hover {
+            transform: translateY(-10px);
+        }
+
+        .equipe-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: var(--bege);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--marrom);
+        }
+
+        .equipe-membro h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .equipe-cargo {
+            color: var(--laranja);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Sustentabilidade */
+        .sustentabilidade-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .sustentabilidade-texto {
+            flex: 1;
+        }
+
+        .sustentabilidade-texto h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .sustentabilidade-lista {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .sustentabilidade-lista li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .sustentabilidade-lista i {
+            color: var(--amarelo);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .sustentabilidade-imagem {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .sustentabilidade-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Depoimentos */
+        .depoimentos {
+            background-color: var(--bege);
+        }
+
+        .depoimentos-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .depoimentos-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .depoimento {
+            min-width: 100%;
+            padding: 30px;
+            background-color: var(--branco);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .depoimento-texto {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--cinza);
+        }
+
+        .depoimento-autor {
+            font-weight: 600;
+            color: var(--marrom);
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--bege);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background-color: var(--laranja);
+        }
+
+        /* Galeria */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .galeria-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .galeria-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(166, 92, 50, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .galeria-item:hover .galeria-overlay {
+            opacity: 1;
+        }
+
+        .galeria-overlay i {
+            color: var(--branco);
+            font-size: 2rem;
+        }
+
+        /* Contato */
+        .contato {
+            background-color: var(--bege);
+        }
+
+        .contato-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contato-info {
+            flex: 1;
+        }
+
+        .contato-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contato-detalhes {
+            margin-bottom: 30px;
+        }
+
+        .contato-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .contato-item i {
+            color: var(--laranja);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .redes-sociais {
+            display: flex;
+            gap: 15px;
+        }
+
+        .rede-social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--marrom);
+            color: var(--branco);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .rede-social:hover {
+            background-color: var(--laranja);
+            transform: translateY(-3px);
+        }
+
+        .contato-form {
+            flex: 1;
+            background-color: var(--branco);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--marrom);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--laranja);
+            outline: none;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Mapa */
+        .mapa {
+            padding: 50px 0;
+            background-color: var(--branco);
+        }
+
+        .mapa-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .mapa-placeholder {
+            background-color: var(--bege);
+            border-radius: 10px;
+            padding: 60px 20px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .mapa-placeholder i {
+            font-size: 3rem;
+            color: var(--laranja);
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--marrom-escuro);
+            color: var(--branco);
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--amarelo);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--bege);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--amarelo);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-frase {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: var(--amarelo);
+            margin-bottom: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .sobre-content, .estado-content, .sustentabilidade-content, .contato-container {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                gap: 0;
+                flex-direction: column;
+                background-color: var(--branco);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 15px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 10px 25px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        /* Animações */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Estilo para o player de áudio */
+        .audio-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--branco);
+            border-radius: 50px;
+            padding: 10px 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 999;
+        }
+
+        .audio-player button {
+            background: none;
+            border: none;
+            color: var(--marrom);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .audio-player button:hover {
+            color: var(--laranja);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="#" class="logo">
+                    <i class="fas fa-sun logo-icon"></i>
+                    <span class="logo-text">Dois Sóis</span>
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#inicio" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="#sobre" class="nav-link">Sobre Nós</a></li>
+                    <li class="nav-item"><a href="#cardapio" class="nav-link">Cardápio</a></li>
+                    <li class="nav-item"><a href="#inspiracao" class="nav-link">Inspiração</a></li>
+                    <li class="nav-item"><a href="#equipe" class="nav-link">Equipe</a></li>
+                    <li class="nav-item"><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Dois Sóis</h1>
+            <p>Onde o sabor do Nordeste brilha duas vezes</p>
+            <a href="#sobre" class="btn">Conheça nossa história</a>
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre Nós</h2>
+            </div>
+            <div class="sobre-content">
+                <div class="sobre-texto">
+                    <h3>Nossa História</h3>
+                    <p>Oxente! A Dois Sóis nasceu do amor pela cultura nordestina e pela doçura que só o sol da Bahia e Pernambuco pode oferecer. Nossa jornada começou, quando tivemos que desenvolver um produto para as aulas de Projeto Integrador, quando 4 colegas pegaram Bahia e Pernambuco, e apaixonados pela culinária regional decidiu compartilhar com o mundo os sabores que os avós lhes ensinaram.</p>
+                    <p>Inspirados pela alegria contagiante da Bahia e pela tradição rica de Pernambuco, criamos uma doceria que celebra o melhor desses dois estados. Cada bombom é preparado com ingredientes selecionados e muito carinho, mantendo viva a essência artesanal das receitas de família.</p>
+                    <p>O nome "Dois Sóis" representa justamente essa dupla inspiração: o calor acolhedor da Bahia e a luz radiante de Pernambuco, que se encontram em cada mordida dos nossos bombons.</p>
+                </div>
+                <div class=
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cardápio -->
+    <section id="cardapio" class="cardapio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nosso Cardápio</h2>
+            </div>
+            <div class="cardapio-filtros">
+                <button class="filtro-btn active" data-filter="todos">Todos</button>
+                <button class="filtro-btn" data-filter="bahia">Inspiração Baiana</button>
+                <button class="filtro-btn" data-filter="pernambuco">Inspiração Pernambucana</button>
+            </div>
+            <div class="cardapio-grid">
+                <!-- Itens do cardápio serão adicionados via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Inspiração Nordestina -->
+    <section id="inspiracao" class="inspiracao">
+        <div class="container">
+            <div class="section-title">
+                <h2>Inspiração Nordestina</h2>
+            </div>
+            <div class="inspiracao-tabs">
+                <button class="tab-btn active" data-tab="bahia">Bahia</button>
+                <button class="tab-btn" data-tab="pernambuco">Pernambuco</button>
+            </div>
+            <div class="tab-content active" id="tab-bahia">
+                <div class="estado-content">
+                    <div class="estado-texto">
+                        <h3>A Alegria Baiana</h3>
+                        <p>A Bahia nos inspira com sua energia contagiante, suas cores vibrantes e a riqueza de sabores que vão além do dendê. Nossos bombons baianos carregam a doçura do maracujá, a intensidade da pimenta e o calor das especiarias que fazem da culinária baiana uma verdadeira festa para os sentidos.</p>
+                        <p>Do acarajé ao vatapá, da capoeira ao axé, a Bahia nos ensinou que a comida é celebração. E é essa celebração que traduzimos em bombons como nosso "Bombom Sol Baiano" com pimenta e maracujá, uma explosão de sabores que lembra o calor e a alegria da terra de todos os santos.</p>
+                        <p>É a Bahia que nos ensina a receber cada cliente com um "oxente" caloroso e a transformar cada bombom em um pedaço de festa.</p>
+                    </div>
+                    <div class="estado-imagem">
+                        <img src="https://imagepng.org/wp-content/uploads/2017/06/bandeira-da-bahia-estado.png" alt="Cultura baiana">
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="tab-pernambuco">
+                <div class="estado-content">
+                    <div class="estado-texto">
+                        <h3>A Tradição Pernambucana</h3>
+                        <p>Pernambuco nos encanta com sua história rica, seu frevo animado e sua doçura artesanal que atravessa gerações. Do bolo de rolo, patrimônio imaterial do estado, à sofisticação simples do cartola, a culinária pernambucana nos mostra que tradição e sabor caminham juntos.</p>
+                        <p>Inspirados pelas rendas de bilro, pelos bonecos de barro e pelo colorido do frevo, criamos bombons que contam histórias. O "Bombom Frevo" com limão e pimenta, com seu equilíbrio entre acidez e picância, e o "Bombom Maracujá do Sertão", com sua intensidade frutada, são testemunhas dessa inspiração.</p>
+                        <p>É Pernambuco que nos lembra que a beleza está nos detalhes e que cada bombom deve ser uma obra de arte, feita com paciência e muito amor.</p>
+                    </div>
+                    <div class="estado-imagem">
+                        <img src="https://imagepng.org/wp-content/uploads/2017/07/bandeira-do-estado-de-pernambuco.png" alt="Cultura pernambucana">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipe -->
+    <section id="equipe" class="equipe">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossa Equipe</h2>
+            </div>
+            <div class="equipe-grid">
+                <div class="equipe-membro">
+                    <div class="equipe-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Max</h3>
+                    <p class="equipe-cargo">Fundador & Chef Confeiteira</p>
+                    <p>Responsável pelas criações mais ousadas e pela essência nordestina em cada bombom.</p>
+                </div>
+                <div class="equipe-membro">
+                    <div class="equipe-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Maria Eduarda</h3>
+                    <p class="equipe-cargo">Especialista em Sabores</p>
+                    <p>Mestre na combinação perfeita entre doçura e a picância característica dos nossos bombons.</p>
+                </div>
+                <div class="equipe-membro">
+                    <div class="equipe-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Sarah</h3>
+                    <p class="equipe-cargo">Gestora de Qualidade</p>
+                    <p>Garante que cada bombom mantenha o padrão de excelência que nos tornou referência.</p>
+                </div>
+                <div class="equipe-membro">
+                    <div class="equipe-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Sophia</h3>
+                    <p class="equipe-cargo">Coordenador de Operações</p>
+                    <p>Cuida para que a magia aconteça nos bastidores e nossa doçura chegue até você.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustentabilidade -->
+    <section id="sustentabilidade" class="sustentabilidade">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sustentabilidade</h2>
+            </div>
+            <div class="sustentabilidade-content">
+                <div class="sustentabilidade-texto">
+                    <h3>Nosso Compromisso com o Planeta</h3>
+                    <p>Na Dois Sóis, acreditamos que um bombom só é realmente bom quando faz bem para todos: para quem consome, para quem produz e para o planeta. Por isso, adotamos práticas sustentáveis em toda nossa cadeia produtiva.</p>
+                    <ul class="sustentabilidade-lista">
+                        <li><i class="fas fa-leaf"></i> <span>Embalagens ecológicas e biodegradáveis</span></li>
+                        <li><i class="fas fa-seedling"></i> <span>Ingredientes provenientes de agricultura familiar local</span></li>
+                        <li><i class="fas fa-recycle"></i> <span>Sistema de compostagem para resíduos orgânicos</span></li>
+                        <li><i class="fas fa-truck"></i> <span>Logística de entrega com baixa emissão de carbono</span></li>
+                        <li><i class="fas fa-hand-holding-heart"></i> <span>Apoio a cooperativas de produtores nordestinos</span></li>
+                    </ul>
+                    <p>Cada bombom que você leva para casa carrega não apenas o sabor do Nordeste, mas também nosso compromisso com um futuro mais doce e sustentável para todos.</p>
+                </div>
+                <div class="sustentabilidade-imagem">
+                    <img src="https://komerce.id/blog/wp-content/uploads/2022/09/daftar-fungsi-kemasan-produk.jpg" alt="Embalagens ecológicas">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="depoimentos">
+        <div class="container">
+            <div class="section-title">
+                <h2>O Que Dizem da Gente</h2>
+            </div>
+            <div class="depoimentos-slider">
+                <div class="depoimentos-container">
+                    <div class="depoimento">
+                        <p class="depoimento-texto">"Que delícia! Os bombons da Dois Sóis me transportaram direto para a casa da minha avó no interior da Bahia. A combinação de maracujá com pimenta é genial!"</p>
+                        <p class="depoimento-autor">- Adriane, Cristal Park</p>
+                    </div>
+                    <div class="depoimento">
+                        <p class="depoimento-texto">"O Bombom Frevo com limão é simplesmente perfeito! O equilíbrio entre o ácido e o picante me lembrou os sabores que eu experimentava em Recife quando criança."</p>
+                        <p class="depoimento-autor">- Renata, Pirapora</p>
+                    </div>
+                    <div class="depoimento">
+                        <p class="depoimento-texto">"Adorei a preocupação com sustentabilidade! Está ornando muito com o mundo atual!"</p>
+                        <p class="depoimento-autor">- Maria Stephanie, Engenho Novo</p>
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section class="galeria">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossa Doçura em Imagens</h2>
+            </div>
+            <div class="galeria-grid">
+                <div class="galeria-item">
+                    <img src="https://i.pinimg.com/originals/7d/35/47/7d35471c7bd443f308e0d1957a256bba.jpg" alt="Bombons Dois Sóis">
+                    <div class="galeria-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://th.bing.com/th/id/R.f564ba4f4a342d0881081085f262272b?rik=ILieKvQPEQlgVw&pid=ImgRaw&r=0" alt="Bombom com pimenta">
+                    <div class="galeria-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://th.bing.com/th/id/OIP.lLC7VntpVrJkuKZ4RKln5QHaFj?pid=ImgDet&rs=1" alt="Sucos">
+                    <div class="galeria-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://th.bing.com/th/id/OIP.MPfvLJKUbyF8OUN6i16UQAHaEW?pid=ImgDet&rs=1" alt="Bombons variados">
+                    <div class="galeria-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contato">
+        <div class="container">
+            <div class="section-title">
+                <h2>Fale Conosco</h2>
+            </div>
+            <div class="contato-container">
+                <div class="contato-info">
+                    <h3>Vamos Conversar?</h3>
+                    <div class="contato-detalhes">
+                        <div class="contato-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Endereço</h4>
+                                <p>Rua dos docinhos, 123 - Centro<br>Santana de Parnaíba, SP | Recife, PE</p>
+                            </div>
+                        </div>
+                        <div class="contato-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telefone</h4>
+                                <p>(71) 99999-9999 | (81) 98888-8888</p>
+                            </div>
+                        </div>
+                        <div class="contato-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>E-mail</h4>
+                                <p>doissois981@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>Siga-nos nas redes sociais</h4>
+                    <div class="redes-sociais">
+                        <a href="https://www.instagram.com/doceriadoissois" class="rede-social" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="rede-social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="rede-social"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contato-form">
+                    <form id="form-contato">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="assunto">Assunto</label>
+                            <input type="text" id="assunto" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="mapa">
+        <div class="container">
+            <div class="mapa-container">
+                <div class="section-title">
+                    <h2>Onde Estamos</h2>
+                </div>
+                <div class="mapa-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Em breve uma loja física!</h3>
+                    <p>Estamos trabalhando para trazer o sabor do Dois Sóis para perto de você. Enquanto isso, faça seu pedido pelo site ou redes sociais!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Dois Sóis</h3>
+                    <p>Onde o sabor do Nordeste brilha duas vezes. Bombons artesanais inspirados na cultura da Bahia e Pernambuco.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#cardapio">Cardápio</a></li>
+                        <li><a href="#inspiracao">Inspiração</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Horário de Funcionamento</h3>
+                    <p>Segunda a Sábado: 9h às 19h<br>Domingo: 10h às 16h</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-frase">Dois Sóis — onde cada bombom carrega o brilho do Nordeste</p>
+                <p>&copy; 2023 Dois Sóis Doceria. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Player de Áudio -->
+    <div class="audio-player">
+        <button id="play-pause"><i class="fas fa-play"></i></button>
+        <span>Música Nordestina</span>
+    </div>
+
+    <script>
+        // Dados do cardápio - Bombons com pimenta e recheios de maracujá e limão
+        const cardapioItens = [
+            {
+                nome: "Bombom Sol Baiano",
+                descricao: "Chocolate meio amargo com recheio de maracujá e toque de pimenta dedo-de-moça.",
+                frase: "O calor da Bahia em cada mordida",
+                preco: "R$ 8,50",
+                categoria: "bahia",
+                imagem: "https://th.bing.com/th/id/R.589e96298bcd86643a7a633c1737462f?rik=4QdnmttHhKHx2Q&pid=ImgRaw&r=0"
+            },
+            {
+                nome: "Bombom Frevo",
+                descricao: "Chocolate branco com recheio de limão siciliano e pimenta rosa.",
+                frase: "A alegria do frevo em forma de bombom",
+                preco: "R$ 9,00",
+                categoria: "pernambuco",
+                imagem: "https://i.pinimg.com/736x/cc/2f/0a/cc2f0afa08d2b83ae1855a5d12252a44.jpg"
+            },
+            {
+                nome: "Bombom Maracujá do Sertão",
+                descricao: "Chocolate ao leite com recheio cremoso de maracujá e pimenta biquinho.",
+                frase: "Doçura que acalma e aquece",
+                preco: "R$ 8,00",
+                categoria: "bahia",
+                imagem: "https://encontrarreceitas.com.br/wp-content/uploads/2025/06/Receita-de-Trufa-de-Maracuja.jpg"
+            },
+            {
+                nome: "Bombom Limão",
+                descricao: "Chocolate amargo com recheio de limão tahiti, cravo e pimenta da jamaica.",
+                frase: "Tradição com um toque de ousadia",
+                preco: "R$ 9,50",
+                categoria: "pernambuco",
+                imagem: "https://th.bing.com/th/id/OIP.Y6qZMVFncdd7dwQXX8bdlAHaE8?pid=ImgDet&rs=1"
+            },
+            {
+                nome: "Bombom Pimenta & Mel",
+                descricao: "Chocolate meio amargo com recheio de mel de engenho e pimenta calabresa.",
+                frase: "O equilíbrio perfeito entre doce e picante",
+                preco: "R$ 8,50",
+                categoria: "bahia",
+                imagem: "https://img.freepik.com/fotos-premium/trufas-gourmet-surtidas-tabla-madera_198639-6611.jpg"
+            },
+            {
+                nome: "Bombom Capim Santo",
+                descricao: "Chocolate branco com recheio de limão capim santo e pimenta branca.",
+                frase: "Frescor nordestino em cada pedaço",
+                preco: "R$ 9,00",
+                categoria: "pernambuco",
+                imagem: "https://th.bing.com/th/id/OIP.gMzGYLWDW8wWi3jMdWW5NwAAAA?pid=ImgDet&rs=1"
+            }
+        ];
+
+        // Menu Hamburguer
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Filtros do cardápio
+        function initCardapio() {
+            const cardapioGrid = document.querySelector('.cardapio-grid');
+            const filtroBtns = document.querySelectorAll('.filtro-btn');
+            
+            // Renderizar todos os itens inicialmente
+            renderCardapioItens(cardapioItens);
+            
+            // Adicionar event listeners aos botões de filtro
+            filtroBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remover classe active de todos os botões
+                    filtroBtns.forEach(b => b.classList.remove('active'));
+                    // Adicionar classe active ao botão clicado
+                    btn.classList.add('active');
+                    
+                    const filter = btn.getAttribute('data-filter');
+                    
+                    if (filter === 'todos') {
+                        renderCardapioItens(cardapioItens);
+                    } else {
+                        const filteredItens = cardapioItens.filter(item => item.categoria === filter);
+                        renderCardapioItens(filteredItens);
+                    }
+                });
+            });
+        }
+
+        function renderCardapioItens(itens) {
+            const cardapioGrid = document.querySelector('.cardapio-grid');
+            cardapioGrid.innerHTML = '';
+            
+            itens.forEach(item => {
+                const cardapioItem = document.createElement('div');
+                cardapioItem.className = 'cardapio-item fade-in';
+                cardapioItem.innerHTML = `
+                    <div class="cardapio-img">
+                        <img src="${item.imagem}" alt="${item.nome}">
+                    </div>
+                    <div class="cardapio-info">
+                        <h3>${item.nome}</h3>
+                        <p class="cardapio-desc">${item.descricao}</p>
+                        <p class="cardapio-frase">"${item.frase}"</p>
+                        <p class="cardapio-preco">${item.preco}</p>
+                    </div>
+                `;
+                cardapioGrid.appendChild(cardapioItem);
+            });
+            
+            // Ativar animações de fade-in
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    el.classList.add('visible');
+                });
+            }, 100);
+        }
+
+        // Tabs de inspiração
+        function initTabs() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remover classe active de todos os botões e conteúdos
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Adicionar classe active ao botão clicado
+                    btn.classList.add('active');
+                    
+                    // Mostrar o conteúdo correspondente
+                    const tabId = `tab-${btn.getAttribute('data-tab')}`;
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        }
+
+        // Slider de depoimentos
+        function initDepoimentosSlider() {
+            const sliderContainer = document.querySelector('.depoimentos-container');
+            const slides = document.querySelectorAll('.depoimento');
+            const dots = document.querySelectorAll('.slider-dot');
+            let currentSlide = 0;
+            
+            function goToSlide(n) {
+                sliderContainer.style.transform = `translateX(-${n * 100}%)`;
+                currentSlide = n;
+                
+                // Atualizar dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === n);
+                });
+            }
+            
+            // Adicionar event listeners aos dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+            });
+            
+            // Auto-play
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                goToSlide(currentSlide);
+            }, 5000);
+        }
+
+        // Formulário de contato
+        function initForm() {
+            const form = document.getElementById('form-contato');
+            
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Coletar dados do formulário
+                const nome = document.getElementById('nome').value;
+                const email = document.getElementById('email').value;
+                const assunto = document.getElementById('assunto').value;
+                const mensagem = document.getElementById('mensagem').value;
+                
+                // Simular envio (em um caso real, isso seria uma requisição AJAX)
+                alert(`Obrigado, ${nome}! Sua mensagem foi enviada com sucesso. Em breve entraremos em contato.`);
+                
+                // Limpar formulário
+                form.reset();
+            });
+        }
+
+        // Player de áudio
+        function initAudioPlayer() {
+            const playPauseBtn = document.getElementById('play-pause');
+            const icon = playPauseBtn.querySelector('i');
+            let isPlaying = false;
+            
+            playPauseBtn.addEventListener('click', () => {
+                isPlaying = !isPlaying;
+                
+                if (isPlaying) {
+                    icon.classList.remove('fa-play');
+                    icon.classList.add('fa-pause');
+                    // Em um caso real, aqui iniciaríamos a música
+                } else {
+                    icon.classList.remove('fa-pause');
+                    icon.classList.add('fa-play');
+                    // Em um caso real, aqui pausaríamos a música
+                }
+            });
+        }
+
+        // Scroll suave para links internos
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Inicializar tudo quando o DOM estiver carregado
+        document.addEventListener('DOMContentLoaded', () => {
+            initCardapio();
+            initTabs();
+            initDepoimentosSlider();
+            initForm();
+            initAudioPlayer();
+            initSmoothScroll();
+        });
+    </script>
+</body>
+</html> here
